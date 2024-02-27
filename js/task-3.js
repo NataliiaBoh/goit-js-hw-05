@@ -1,24 +1,88 @@
-const profile = {
-    username: "Jacob",
-    playTime: 300,
+/**Напиши стрілочну функцію sortByDescendingFriendCount(users) , 
+ * яка прийматиме один параметр users — масив об’єктів 
+ * користувачів.
 
-    changeUsername(newName) {
-        this.username = newName;
+Функція має повертати масив усіх користувачів, відсортованих 
+за спаданням кількостій їх друзів (властивість friends). */
+
+const sortByDescendingFriendCount = (users) => {
+    return users.toSorted((a, b) => b.friends.length - a.friends.length);
+
+}
+
+console.log(
+  sortByDescendingFriendCount([
+    {
+      name: "Moore Hensley",
+      friends: ["Sharron Pace"],
+      gender: "male"
     },
-    updatePlayTime(hours) {
-        this.playTime += hours;
+    {
+      name: "Sharlene Bush",
+      friends: ["Briana Decker", "Sharron Pace"],
+      gender: "female"
     },
-    getInfo() {
-        return `${this.username} has ${this.playTime} active 
-hours!`
+    {
+      name: "Ross Vazquez",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      gender: "male"
+    },
+    {
+      name: "Elma Head",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      gender: "female"
+    },
+    {
+      name: "Carey Barr",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      gender: "male"
+    },
+    {
+      name: "Blackburn Dotson",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      gender: "male"
+    },
+    {
+      name: "Sheree Anthony",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      gender: "female"
     }
-};
-
-
-console.log(profile.getInfo()); // "Jacob has 300 active hours!"
-
-profile.changeUsername("Marco");
-console.log(profile.getInfo()); // "Marco has 300 active hours!"
-
-profile.updatePlayTime(20);
-console.log(profile.getInfo()); // "Marco has 320 active hours!" 
+  ])
+);
+// [
+//   {
+//     name: "Ross Vazquez",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Elma Head",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Moore Hensley",
+//     friends: ["Sharron Pace"],
+//     gender: "male"
+//   }
+// ]
